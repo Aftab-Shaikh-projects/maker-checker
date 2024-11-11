@@ -1,0 +1,299 @@
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.table th, .table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.table th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+.table tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+
+
+/* General button styling */
+.btn {
+    padding: 8px 16px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+/* Approve button styling */
+.approve-btn {
+    background-color: #28a745; /* green */
+}
+
+.approve-btn:hover {
+    background-color: #218838; /* darker green */
+}
+
+/* Reject button styling */
+.refill-btn {
+    background-color: yellow; /* red */
+}
+
+.refill-btn:hover {
+    background-color: #cbf13f; /* darker red */
+}
+
+/* Delete button styling */
+.delete-btn {
+    background-color: #ff4d4d; /* bright red */
+}
+
+.delete-btn:hover {
+    background-color: #e60000; /* darker red */
+}
+
+/* Edit button styling */
+.edit-btn {
+    background-color: #007bff; /* blue */
+}
+
+.edit-btn:hover {
+    background-color: #0056b3; /* darker blue */
+}
+
+/* Modal Background */
+#editModal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto; /* Center it vertically and horizontally */
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #888;
+    width: 100%; /* Adjust width for responsiveness */
+    max-width: 500px; /* Max width to ensure it doesn't get too large */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow-y: auto; /* Allows vertical scrolling if content is too long */
+    max-height: 80vh; /* Set a maximum height for the modal (80% of the viewport height) */
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #aaa;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close-btn:hover {
+    color: #000;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Reduced gap between elements */
+}
+
+/* Label Styling */
+label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="number"],
+select {
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+/* Button Styling */
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Input Error Styling */
+input:invalid {
+    border-color: red;
+}
+
+input:focus:invalid {
+    outline: none;
+    box-shadow: 0 0 5px red;
+}
+
+/* Responsive Design for Smaller Screens */
+@media screen and (max-width: 480px) {
+    .modal-content {
+        width: 90%; /* Make the modal width almost full for smaller screens */
+        padding: 15px;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    select,
+    button[type="submit"] {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: #4b8bf5;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Styling the Navbar List */
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 30px; /* Space between buttons */
+}
+
+.navbar li {
+    display: inline;
+}
+
+.navbar-btn button {
+    background-color: white;
+    color: #4b8bf5;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for navbar buttons */
+.navbar-btn button:hover {
+    background-color: #3578e5;
+    color: white;
+}
+
+/* Styling for Logout Button */
+.btn {
+    display: flex;
+    justify-content: center;
+}
+
+.btn button {
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for Logout button */
+.btn button:hover {
+    background-color: darkred;
+}
+
+/* <div class="container">
+<?php
+include_once "config.php";
+
+$table = "SELECT * FROM `check`";
+$tableres = mysqli_query($conn, $table);
+$row = mysqli_num_rows($tableres);
+if ($row > 0) {
+    $i = 1;
+    while ($dt = mysqli_fetch_assoc($tableres)) {
+
+?>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">Username</th>
+                    <th scope="col">Product Name</th>
+                    <th scope="col">Product Type</th>
+                    <th scope="col">Purchase Price</th>
+                    <th scope="col">Selling Price</th>
+                    <th scope="col">Unit</th>
+                    <th scope="col">Status</th>
+                </tr>
+            </thead>
+            <tbody id="tablebody">
+                <tr>
+                    <td><?= $i++ ?></td>
+                    <td><?= $dt['username'] ?></td>
+                    <td><?= $dt['productname'] ?></td>
+                    <td><?= $dt['producttype'] ?></td>
+                    <td><?= $dt['purchaseprice'] ?></td>
+                    <td><?= $dt['sellingprice'] ?></td>
+                    <td><?= $dt['unit'] ?></td>
+                    <td <?= $dt['id'] ?>><?= $dt['status'] ?></td>
+                </tr>
+        <?php
+    };
+}
+        ?>
+            </tbody>
+        </table>
+</div> */
+
+/* Modal styling */
+/* Modal styling */
+
+
+
+
+
+
+

@@ -1,0 +1,326 @@
+/* General Styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f7f8;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Container Styling */
+.container {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Section Styling */
+#maker-section {
+  margin-bottom: 20px;
+}
+
+#maker-section h2 {
+  text-align: center;
+  color: #333;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  margin: 10px 0 5px;
+  font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="number"],
+form select {
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+form button[type="submit"] {
+  padding: 10px;
+  font-size: 1em;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.status-message {
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: green;
+}
+
+/* Table Styling */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.table thead {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.table thead th {
+  padding: 12px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.table tbody tr:hover {
+  background-color: #e1e7ff;
+}
+
+.table tbody td {
+  padding: 12px;
+  border: 1px solid #ddd;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+      width: 90%;
+  }
+
+  form input,
+  form select,
+  form button {
+      font-size: 0.9em;
+  }
+
+  .table {
+      font-size: 0.9em;
+  }
+}
+
+/* Navbar Styling */
+.admin {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 20px;
+  background-color: #007bff;
+  position: relative;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-right: 10px;
+}
+
+.admin a {
+  text-decoration: none;
+}
+
+.admin-btn {
+  background-color: #ffffff;
+  color: #007bff;
+  border: none;
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.admin-btn:hover {
+  background-color: #0056b3;
+  color: #ffffff;
+}
+#editModal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fff;
+  margin: 5% auto; /* Center it vertically and horizontally */
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #888;
+  width: 100%; /* Adjust width for responsiveness */
+  max-width: 500px; /* Max width to ensure it doesn't get too large */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow-y: auto; /* Allows vertical scrolling if content is too long */
+  max-height: 80vh; /* Set a maximum height for the modal (80% of the viewport height) */
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #aaa;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.close-btn:hover {
+  color: #000;
+}
+
+/* Form Styling */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Reduced gap between elements */
+}
+
+/* Label Styling */
+label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="number"],
+select {
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+/* Button Styling */
+button[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* Input Error Styling */
+input:invalid {
+  border-color: red;
+}
+
+input:focus:invalid {
+  outline: none;
+  box-shadow: 0 0 5px red;
+}
+
+/* Responsive Design for Smaller Screens */
+@media screen and (max-width: 480px) {
+  .modal-content {
+      width: 90%; /* Make the modal width almost full for smaller screens */
+      padding: 15px;
+  }
+
+  input[type="text"],
+  input[type="number"],
+  select,
+  button[type="submit"] {
+      font-size: 14px;
+      padding: 8px;
+  }
+}
+
+/* Navbar Styling */
+.navbar {
+  background-color: #4b8bf5;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Styling the Navbar List */
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 30px; /* Space between buttons */
+}
+
+.navbar li {
+  display: inline;
+}
+
+.navbar-btn button {
+  background-color: white;
+  color: #4b8bf5;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1.1em;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for navbar buttons */
+.navbar-btn button:hover {
+  background-color: #3578e5;
+  color: white;
+}
+
+/* Styling for Logout Button */
+.btn {
+  display: flex;
+  justify-content: center;
+}
+
+.btn button {
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1.1em;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for Logout button */
+.btn button:hover {
+  background-color: darkred;
+}
